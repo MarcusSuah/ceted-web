@@ -1,5 +1,5 @@
 import { Link } from '@inertiajs/react';
-import { BookOpen, FolderGit2, LayoutGrid } from 'lucide-react';
+import { BookOpen, FolderGit2, KeyRound, LayoutGrid, ShieldCheck, Users } from 'lucide-react';
 import AppLogo from '@/components/app-logo';
 import { NavFooter } from '@/components/nav-footer';
 import { NavMain } from '@/components/nav-main';
@@ -14,6 +14,9 @@ import {
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
 import { dashboard } from '@/routes';
+import permissionManager from '@/routes/permission-manager';
+import roleManager from '@/routes/role-manager';
+import userManager from '@/routes/user-manager';
 import type { NavItem } from '@/types';
 
 const mainNavItems: NavItem[] = [
@@ -21,6 +24,21 @@ const mainNavItems: NavItem[] = [
         title: 'Dashboard',
         href: dashboard(),
         icon: LayoutGrid,
+    },
+    {
+        title: 'User Management',
+        href: userManager.index().url,
+        icon: Users,
+    },
+    {
+        title: 'Role Management',
+        href: roleManager.index().url,
+        icon: ShieldCheck,
+    },
+    {
+        title: 'Permission Management',
+        href: permissionManager.index().url,
+        icon: KeyRound,
     },
 ];
 
